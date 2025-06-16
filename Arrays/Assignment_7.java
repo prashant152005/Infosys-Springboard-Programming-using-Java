@@ -13,7 +13,7 @@ class Tester{
                 }
             }
         }
-        return pemutations;
+        return permutations;
     }
     
     public static void main(String args[]){
