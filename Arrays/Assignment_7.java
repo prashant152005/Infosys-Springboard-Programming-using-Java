@@ -8,12 +8,23 @@ class Tester{
             for(int j=0; j<3; j++){
                 if(i==j) continue;
                 for(int k=0; k<3; k++){
-                    if(i==j || j==k) continue;
-                    permutations[index++] = "" + str.charAt(i) + str.charAt(j) + str.charAt(i);
+                    if(i==k || j==k) continue;
+                    String prem = "" + str.charAt(i) + str.charAt(j) + str.charAt(k);
+                    if(!contains(permutations, prem)){
+                        permutations[index++] = prem;
+                    }
                 }
             }
         }
-        return pemutations;
+        return permutations;
+    }
+    private static boolean contains(String arr[], String value){
+        for(String s:arr){
+            if(s != null && s.equals(value)){
+                return true;
+            }
+        }
+        return false;
     }
     
     public static void main(String args[]){
@@ -25,5 +36,3 @@ class Tester{
         }
     }
 }
-
-
